@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>JRR Car Tint Installations Services – Laoag City</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --navy: #07142B;
+    --navy-mid: #0d1f42;
+    --navy-light: #112354;
+    --red: #B52D32;
+    --red-hover: #C62828;
+    --white: #ffffff;
+    --light-bg: #F4F6F8;
+    --light-bg2: #eef1f5;
+    --text-muted: #7a8599;
+    --text-light: #b0bac9;
+    --card-bg: rgba(255,255,255,0.05);
+    --glass-border: rgba(255,255,255,0.10);
+    --radius-sm: 12px;
+    --radius-md: 20px;
+    --radius-lg: 28px;
+    --radius-xl: 40px;
+    --shadow-sm: 0 2px 12px rgba(7,20,43,0.08);
+    --shadow-md: 0 8px 32px rgba(7,20,43,0.13);
+    --shadow-lg: 0 20px 60px rgba(7,20,43,0.18);
+    --shadow-red: 0 8px 32px rgba(181,45,50,0.25);
+  }
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Sora', sans-serif;
+    background: var(--white);
+    color: var(--navy);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── SCROLLBAR ── */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--navy); }
+  ::-webkit-scrollbar-thumb { background: var(--red); border-radius: 99px; }
+
+  /* ── NAVBAR ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: rgba(7,20,43,0.85);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    padding: 0 5%;
+    height: 72px;
+    display: flex; align-items: center; justify-content: space-between;
+    transition: all 0.3s ease;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 12px; text-decoration: none;
+  }
+  .nav-logo-icon {
+    width: 40px; height: 40px; border-radius: 10px;
+    background: linear-gradient(135deg, var(--red), #e05560);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; font-weight: 800; color: white;
+    box-shadow: var(--shadow-red);
+    flex-shrink: 0;
+  }
+  .nav-logo-text { display:flex; flex-direction:column; }
+  .nav-logo-brand { font-size: 15px; font-weight: 700; color: white; line-height: 1.1; }
+  .nav-logo-sub { font-size: 10px; font-weight: 400; color: var(--text-light); letter-spacing: 0.08em; text-transform: uppercase; }
+  .nav-links {
+    display: flex; align-items: center; gap: 8px; list-style: none;
+  }
+  .nav-links a {
+    text-decoration: none; color: rgba(255,255,255,0.7);
+    font-size: 14px; font-weight: 500;
+    padding: 8px 14px; border-radius: var(--radius-sm);
+    transition: all 0.2s ease;
+  }
+  .nav-links a:hover { color: white; background: rgba(255,255,255,0.08); }
+  .nav-cta {
+    background: var(--red) !important;
+    color: white !important;
+    padding: 9px 20px !important;
+    border-radius: var(--radius-sm) !important;
+    font-weight: 600 !important;
+    box-shadow: var(--shadow-red);
+    transition: all 0.2s ease !important;
+  }
+  .nav-cta:hover { background: var(--red-hover) !important; transform: translateY(-1px); box-shadow: 0 10px 28px rgba(181,45,50,0.35) !important; }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: white; border-radius: 2px; transition: all 0.3s; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #07142B 0%, #0e1e3d 40%, #121b35 70%, #07142B 100%);
+    position: relative; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    padding: 120px 5% 80px;
+  }
+  .hero-orb {
+    position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none;
+  }
+  .hero-orb-1 {
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(181,45,50,0.18) 0%, transparent 70%);
+    top: -100px; right: -100px;
+    animation: orbFloat 8s ease-in-out infinite;
+  }
+  .hero-orb-2 {
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(181,45,50,0.10) 0%, transparent 70%);
+    bottom: -50px; left: -50px;
+    animation: orbFloat 10s ease-in-out infinite reverse;
+  }
+  .hero-orb-3 {
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%);
+    top: 40%; left: 40%;
+    animation: orbFloat 12s ease-in-out infinite;
+  }
+  @keyframes orbFloat {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-30px) scale(1.05); }
+  }
+  .hero-grid {
+    position: absolute; inset: 0; opacity: 0.03;
+    background-image: linear-gradient(rgba(255,255,255,0.8) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.8) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-content {
+    position: relative; z-index: 2;
+    max-width: 900px; margin: 0 auto;
+    text-align: center;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(181,45,50,0.15);
+    border: 1px solid rgba(181,45,50,0.3);
+    border-radius: 99px;
+    padding: 6px 16px;
+    margin-bottom: 32px;
+    animation: fadeSlideUp 0.6s ease both;
+  }
+  .hero-badge-dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--red);
+    box-shadow: 0 0 8px var(--red);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.6;transform:scale(1.3)} }
+  .hero-badge span { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.85); letter-spacing: 0.06em; text-transform: uppercase; }
+  .hero-title {
+    font-size: clamp(44px, 7vw, 80px);
+    font-weight: 800;
+    color: white;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    margin-bottom: 24px;
+    animation: fadeSlideUp 0.7s 0.1s ease both;
+  }
+  .hero-title .gradient-text {
+    background: linear-gradient(135deg, #e05560 0%, #f4868a 50%, #e05560 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% auto;
+    animation: shimmer 4s linear infinite;
+  }
+  @keyframes shimmer { to { background-position: 200% center; } }
+  .hero-subtitle {
+    font-size: clamp(16px, 2.5vw, 20px);
+    font-weight: 400;
+    color: rgba(255,255,255,0.6);
+    max-width: 580px; margin: 0 auto 40px;
+    line-height: 1.7;
+    animation: fadeSlideUp 0.8s 0.2s ease both;
+  }
+  .hero-actions {
+    display: flex; align-items: center; justify-content: center; gap: 16px;
+    flex-wrap: wrap;
+    animation: fadeSlideUp 0.9s 0.3s ease both;
+  }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--red);
+    color: white;
+    font-family: 'Sora', sans-serif;
+    font-size: 15px; font-weight: 700;
+    padding: 16px 32px;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    border: none; cursor: pointer;
+    box-shadow: var(--shadow-red);
+    transition: all 0.25s ease;
+    position: relative; overflow: hidden;
+  }
+  .btn-primary::before {
+    content:''; position:absolute; inset:0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
+    opacity:0; transition: opacity 0.25s;
+  }
+  .btn-primary:hover { background: var(--red-hover); transform: translateY(-2px); box-shadow: 0 16px 40px rgba(181,45,50,0.4); }
+  .btn-primary:hover::before { opacity:1; }
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: rgba(255,255,255,0.08);
+    color: white;
+    font-family: 'Sora', sans-serif;
+    font-size: 15px; font-weight: 600;
+    padding: 16px 32px;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.15);
+    cursor: pointer;
+    transition: all 0.25s ease;
+    backdrop-filter: blur(8px);
+  }
+  .btn-secondary:hover { background: rgba(255,255,255,0.14); transform: translateY(-2px); }
+  .hero-stats {
+    display: flex; justify-content: center; gap: 48px;
+    margin-top: 64px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    animation: fadeSlideUp 1s 0.4s ease both;
+    flex-wrap: wrap;
+  }
+  .hero-stat { text-align: center; }
+  .hero-stat-number { font-size: 32px; font-weight: 800; color: white; line-height: 1; }
+  .hero-stat-number span { color: var(--red); }
+  .hero-stat-label { font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.45); margin-top: 6px; text-transform: uppercase; letter-spacing: 0.06em; }
+
+  @keyframes fadeSlideUp {
+    from { opacity:0; transform:translateY(24px); }
+    to { opacity:1; transform:translateY(0); }
+  }
+
+  /* ── TRUST BAR ── */
+  .trust-bar {
+    background: var(--light-bg);
+    padding: 20px 5%;
+    border-bottom: 1px solid rgba(7,20,43,0.08);
+  }
+  .trust-bar-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: center; gap: 40px;
+    flex-wrap: wrap;
+  }
+  .trust-item {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 13px; font-weight: 600; color: var(--navy);
+    opacity: 0.7;
+  }
+  .trust-icon { font-size: 18px; }
+
+  /* ── SECTION BASE ── */
+  section { padding: 100px 5%; }
+  .section-label {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--red);
+    margin-bottom: 16px;
+  }
+  .section-label::before {
+    content:''; width:20px; height:2px; background:var(--red); border-radius:2px;
+  }
+  .section-title {
+    font-size: clamp(30px, 4.5vw, 52px);
+    font-weight: 800; color: var(--navy);
+    line-height: 1.12; letter-spacing: -0.025em;
+    margin-bottom: 20px;
+  }
+  .section-subtitle {
+    font-size: 17px; font-weight: 400;
+    color: var(--text-muted); line-height: 1.7;
+    max-width: 560px;
+  }
+  .section-header { margin-bottom: 64px; }
+  .container { max-width: 1200px; margin: 0 auto; }
+
+  /* ── SERVICES ── */
+  .services { background: var(--white); }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+  }
+  .service-card {
+    background: var(--white);
+    border: 1px solid rgba(7,20,43,0.08);
+    border-radius: var(--radius-lg);
+    padding: 36px 32px;
+    transition: all 0.3s ease;
+    position: relative; overflow: hidden;
+  }
+  .service-card::before {
+    content:''; position:absolute;
+    top:0; left:0; right:0; height:3px;
+    background: linear-gradient(90deg, var(--red), #e05560);
+    opacity:0; transition: opacity 0.3s;
+  }
+  .service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(181,45,50,0.15);
+  }
+  .service-card:hover::before { opacity:1; }
+  .service-icon {
+    width: 56px; height: 56px; border-radius: var(--radius-sm);
+    background: linear-gradient(135deg, rgba(181,45,50,0.1), rgba(181,45,50,0.05));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px; margin-bottom: 20px;
+    transition: all 0.3s ease;
+  }
+  .service-card:hover .service-icon { background: linear-gradient(135deg, rgba(181,45,50,0.18), rgba(181,45,50,0.08)); transform: scale(1.08); }
+  .service-title { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+  .service-desc { font-size: 14px; font-weight: 400; color: var(--text-muted); line-height: 1.7; }
+  .service-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 13px; font-weight: 600; color: var(--red);
+    margin-top: 20px; text-decoration: none;
+    transition: gap 0.2s ease;
+  }
+  .service-link:hover { gap: 10px; }
+
+  /* ── WHY CHOOSE US ── */
+  .why { background: var(--navy); }
+  .why .section-title { color: white; }
+  .why .section-subtitle { color: rgba(255,255,255,0.5); }
+  .why .section-label { color: #e05560; }
+  .why .section-label::before { background: #e05560; }
+  .why-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: center;
+  }
+  .why-visual {
+    position: relative;
+  }
+  .why-card-main {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    backdrop-filter: blur(12px);
+  }
+  .why-rating {
+    display: flex; align-items: center; gap: 6px;
+    margin-bottom: 16px;
+  }
+  .star { color: #FFD700; font-size: 20px; }
+  .why-rating-text { font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.7); }
+  .why-review-text {
+    font-size: 18px; font-weight: 600; color: white;
+    line-height: 1.5; font-style: italic;
+    margin-bottom: 20px;
+  }
+  .why-reviewer {
+    display: flex; align-items: center; gap: 12px;
+  }
+  .why-reviewer-avatar {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--red), #e05560);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; font-weight: 700; color: white;
+  }
+  .why-reviewer-name { font-size: 14px; font-weight: 600; color: white; }
+  .why-reviewer-meta { font-size: 12px; color: rgba(255,255,255,0.4); }
+  .why-floating {
+    position: absolute; bottom: -20px; right: -20px;
+    background: var(--red);
+    border-radius: var(--radius-md);
+    padding: 20px 24px;
+    box-shadow: var(--shadow-red);
+  }
+  .why-floating-number { font-size: 28px; font-weight: 800; color: white; line-height:1; }
+  .why-floating-label { font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 4px; }
+  .why-points { display: flex; flex-direction: column; gap: 28px; }
+  .why-point { display: flex; gap: 16px; align-items: flex-start; }
+  .why-point-icon {
+    width: 44px; height: 44px; flex-shrink: 0;
+    border-radius: var(--radius-sm);
+    background: rgba(181,45,50,0.15);
+    border: 1px solid rgba(181,45,50,0.2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+  }
+  .why-point-title { font-size: 16px; font-weight: 700; color: white; margin-bottom: 6px; }
+  .why-point-desc { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.6; }
+
+  /* ── PROCESS ── */
+  .process { background: var(--light-bg); }
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 32px; position: relative;
+  }
+  .process-step {
+    text-align: center; padding: 40px 24px;
+    background: white; border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  .process-step:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+  .step-number {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--red), #e05560);
+    color: white; font-size: 22px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px;
+    box-shadow: var(--shadow-red);
+  }
+  .step-title { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+  .step-desc { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+  /* ── GALLERY ── */
+  .gallery { background: var(--white); }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 16px;
+  }
+  .gallery-item {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: var(--navy);
+    aspect-ratio: 4/3;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .gallery-item:first-child { grid-column: span 2; }
+  .gallery-item:hover { transform: scale(1.02); box-shadow: var(--shadow-lg); }
+  .gallery-item-bg {
+    width:100%; height:100%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 48px;
+    background: linear-gradient(135deg, #0e1e3d 0%, #07142B 100%);
+    position: relative;
+  }
+  .gallery-item-bg::after {
+    content: attr(data-label);
+    position: absolute; bottom:16px; left:16px;
+    font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.85);
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(8px);
+    padding: 6px 14px; border-radius: 99px;
+  }
+  .gallery-accent {
+    position: absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    width: 80px; height: 80px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(181,45,50,0.3) 0%, transparent 70%);
+    filter: blur(20px);
+  }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials { background: var(--light-bg); }
+  .testimonials-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+  }
+  .testimonial-card {
+    background: white; border-radius: var(--radius-lg); padding: 36px;
+    box-shadow: var(--shadow-sm); border: 1px solid rgba(7,20,43,0.05);
+    transition: all 0.3s ease;
+  }
+  .testimonial-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+  .testimonial-stars { display:flex; gap:4px; margin-bottom: 20px; }
+  .testimonial-stars span { color: #FFD700; font-size: 18px; }
+  .testimonial-text {
+    font-size: 16px; font-weight: 500; color: var(--navy);
+    line-height: 1.7; margin-bottom: 24px; font-style: italic;
+  }
+  .testimonial-author { display:flex; align-items:center; gap:12px; }
+  .t-avatar {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--red), #e05560);
+    display:flex; align-items:center; justify-content:center;
+    font-size:16px; font-weight:700; color:white; flex-shrink:0;
+  }
+  .t-name { font-size:14px; font-weight:700; color:var(--navy); }
+  .t-meta { font-size:12px; color:var(--text-muted); margin-top:2px; }
+  .t-google { font-size:11px; color:#4285F4; font-weight:600; margin-top:2px; }
+
+  /* ── CTA SECTION ── */
+  .cta-section {
+    background: linear-gradient(135deg, var(--navy) 0%, #0e1e3d 60%, var(--navy) 100%);
+    text-align: center; position: relative; overflow: hidden;
+  }
+  .cta-section .section-title { color: white; }
+  .cta-subtitle { font-size:18px; color:rgba(255,255,255,0.55); max-width:500px; margin:0 auto 40px; line-height:1.7; }
+  .cta-actions { display:flex; align-items:center; justify-content:center; gap:16px; flex-wrap:wrap; }
+  .cta-orb {
+    position:absolute; width:500px; height:500px; border-radius:50%;
+    background:radial-gradient(circle, rgba(181,45,50,0.15) 0%, transparent 70%);
+    filter:blur(60px);
+  }
+  .cta-orb-1 { top:-100px; left:-100px; }
+  .cta-orb-2 { bottom:-100px; right:-100px; }
+  .cta-section .container { position:relative; z-index:2; }
+  .cta-phone {
+    display:inline-flex; align-items:center; gap:10px;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.15);
+    border-radius:var(--radius-md);
+    padding:16px 28px;
+    color:white; font-size:17px; font-weight:700;
+    text-decoration:none;
+    transition:all 0.25s ease;
+  }
+  .cta-phone:hover { background:rgba(255,255,255,0.14); transform:translateY(-2px); }
+
+  /* ── CONTACT BAR ── */
+  .contact-bar {
+    background: var(--red); padding: 20px 5%;
+  }
+  .contact-bar-inner {
+    max-width:1200px; margin:0 auto;
+    display:flex; align-items:center; justify-content:space-between;
+    flex-wrap:wrap; gap:16px;
+  }
+  .contact-info { display:flex; align-items:center; gap:32px; flex-wrap:wrap; }
+  .contact-item { display:flex; align-items:center; gap:10px; }
+  .contact-item-icon { font-size:18px; }
+  .contact-item-text { font-size:13px; font-weight:600; color:white; }
+  .contact-item-sub { font-size:11px; color:rgba(255,255,255,0.7); margin-top:1px; }
+  .hours-badge {
+    background:rgba(255,255,255,0.2); border-radius:99px;
+    padding:8px 18px; font-size:12px; font-weight:700; color:white;
+    display:flex; align-items:center; gap:6px;
+  }
+  .open-dot { width:7px; height:7px; background:#4ade80; border-radius:50%; box-shadow:0 0 8px #4ade80; animation:pulse 2s infinite; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #040d1e;
+    padding: 60px 5% 32px;
+  }
+  .footer-inner {
+    max-width:1200px; margin:0 auto;
+  }
+  .footer-top {
+    display:grid; grid-template-columns:2fr 1fr 1fr;
+    gap:60px; padding-bottom:48px;
+    border-bottom:1px solid rgba(255,255,255,0.07);
+  }
+  .footer-brand-logo {
+    display:flex; align-items:center; gap:12px; margin-bottom:16px;
+  }
+  .footer-brand-desc { font-size:14px; color:rgba(255,255,255,0.4); line-height:1.7; max-width:280px; }
+  .footer-heading { font-size:12px; font-weight:700; color:white; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:20px; }
+  .footer-links { list-style:none; display:flex; flex-direction:column; gap:12px; }
+  .footer-links a { font-size:14px; color:rgba(255,255,255,0.45); text-decoration:none; transition:color 0.2s; }
+  .footer-links a:hover { color:white; }
+  .footer-bottom {
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:28px; flex-wrap:wrap; gap:12px;
+  }
+  .footer-copy { font-size:13px; color:rgba(255,255,255,0.3); }
+  .footer-copy span { color:var(--red); }
+  .footer-socials { display:flex; gap:12px; }
+  .footer-social-btn {
+    width:36px; height:36px; border-radius:var(--radius-sm);
+    background:rgba(255,255,255,0.07);
+    border:1px solid rgba(255,255,255,0.1);
+    display:flex; align-items:center; justify-content:center;
+    text-decoration:none; font-size:16px;
+    transition:all 0.2s;
+  }
+  .footer-social-btn:hover { background:rgba(181,45,50,0.3); border-color:rgba(181,45,50,0.4); transform:translateY(-2px); }
+
+  /* ── MAP SECTION ── */
+  .map-section { background: var(--white); }
+  .map-layout { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
+  .map-embed {
+    border-radius:var(--radius-lg); overflow:hidden;
+    box-shadow:var(--shadow-lg); border:3px solid rgba(7,20,43,0.07);
+    height:380px; background:#e0e4ea;
+    position:relative;
+  }
+  .map-placeholder {
+    width:100%; height:100%;
+    background: linear-gradient(135deg, #e8eaf0 0%, #d4d8e1 100%);
+    display:flex; align-items:center; justify-content:center;
+    flex-direction:column; gap:12px;
+  }
+  .map-placeholder-icon { font-size:48px; }
+  .map-placeholder-text { font-size:15px; font-weight:600; color:var(--navy); opacity:0.5; text-align:center; padding:0 24px; }
+  .map-details { display:flex; flex-direction:column; gap:24px; }
+  .map-detail-item { display:flex; gap:16px; align-items:flex-start; }
+  .map-detail-icon {
+    width:44px; height:44px; flex-shrink:0;
+    border-radius:var(--radius-sm);
+    background:rgba(181,45,50,0.08); border:1px solid rgba(181,45,50,0.12);
+    display:flex; align-items:center; justify-content:center; font-size:20px;
+  }
+  .map-detail-label { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--red); margin-bottom:4px; }
+  .map-detail-value { font-size:15px; font-weight:600; color:var(--navy); line-height:1.5; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .nav-links { display:none; }
+    .hamburger { display:flex; }
+    .why-layout { grid-template-columns:1fr; gap:48px; }
+    .why-visual { display:none; }
+    .footer-top { grid-template-columns:1fr 1fr; }
+    .map-layout { grid-template-columns:1fr; }
+    .gallery-grid { grid-template-columns:1fr 1fr; }
+    .gallery-item:first-child { grid-column:span 2; }
+  }
+  @media (max-width: 600px) {
+    .hero-stats { gap:28px; }
+    .gallery-grid { grid-template-columns:1fr; }
+    .gallery-item:first-child { grid-column:span 1; }
+    .footer-top { grid-template-columns:1fr; gap:36px; }
+    .trust-bar-inner { gap:20px; }
+    .contact-bar-inner { flex-direction:column; align-items:flex-start; }
+  }
+
+  /* ── MOBILE NAV ── */
+  .mobile-nav {
+    display:none; position:fixed; top:72px; left:0; right:0;
+    background:rgba(7,20,43,0.97);
+    backdrop-filter:blur(24px);
+    border-bottom:1px solid rgba(255,255,255,0.07);
+    padding:24px 5%; z-index:999;
+    flex-direction:column; gap:8px;
+  }
+  .mobile-nav.open { display:flex; }
+  .mobile-nav a {
+    text-decoration:none; color:rgba(255,255,255,0.7);
+    font-size:16px; font-weight:500;
+    padding:14px 16px; border-radius:var(--radius-sm);
+    transition:all 0.2s;
+  }
+  .mobile-nav a:hover { background:rgba(255,255,255,0.07); color:white; }
+
+  /* ── SCROLL ANIMATIONS ── */
+  .reveal {
+    opacity:0; transform:translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity:1; transform:translateY(0); }
+
+  /* ── BACK TO TOP ── */
+  .back-top {
+    position:fixed; bottom:28px; right:28px;
+    width:44px; height:44px; border-radius:50%;
+    background:var(--red); color:white;
+    display:flex; align-items:center; justify-content:center;
+    font-size:20px; text-decoration:none;
+    box-shadow:var(--shadow-red); z-index:500;
+    opacity:0; pointer-events:none;
+    transition:all 0.3s ease;
+  }
+  .back-top.visible { opacity:1; pointer-events:auto; }
+  .back-top:hover { transform:translateY(-3px); }
+
+  /* ── GALLERY REAL IMAGES ── */
+  .gallery-img-wrap {
+    width:100%; height:100%; position:relative;
+    overflow:hidden;
+  }
+  .gallery-img-wrap img {
+    width:100%; height:100%; object-fit:cover;
+    transition: transform 0.5s ease;
+    display:block;
+  }
+  .gallery-item:hover .gallery-img-wrap img { transform: scale(1.07); }
+  .gallery-label {
+    position:absolute; bottom:14px; left:14px;
+    background:rgba(7,20,43,0.72);
+    backdrop-filter:blur(10px);
+    color:white; font-size:13px; font-weight:600;
+    padding:6px 14px; border-radius:99px;
+    pointer-events:none;
+  }
+
+  .hero::after {
+    content:'';
+    position:absolute; inset:0;
+    background-image: url('https://pplx-res.cloudinary.com/image/upload/pplx_search_images/26fa40a447f936ce66bd5d74f910c1bdd460c27b.jpg');
+    background-size:cover; background-position:center;
+    opacity:0.07;
+    z-index:1;
+    pointer-events:none;
+  }
+  .hero-content { z-index:3 !important; }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-icon" style="background:transparent;padding:0;overflow:hidden;"><img src="https://scontent.fmnl33-6.fna.fbcdn.net/v/t39.30808-6/318332986_662828471982089_3665678967569637679_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=KOa4FvYnk_QQ7kNvwHB6Mpu&_nc_oc=AdojZq7foFcyirLMQSg8EIhMKJHsYC6IswB8uJ9ZNsIce3XeDteDaeR7rtb-d1fhjPs&_nc_zt=23&_nc_ht=scontent.fmnl33-6.fna&_nc_gid=FKIOCTw8skJiMyCrHKjfIQ&_nc_ss=7a2a8&oh=00_Af5aeUgNOTcn1r4lgfjH0M4PSsJWUNcxIM7HbZvKCwh8gg&oe=6A1C557E" alt="JRR Logo" style="width:40px;height:40px;object-fit:cover;border-radius:10px;" onerror="this.parentElement.innerHTML='JRR'" /></div>
+    <div class="nav-logo-text">
+      <span class="nav-logo-brand">JRR Car Tint</span>
+      <span class="nav-logo-sub">Laoag City, Ilocos Norte</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#location">Location</a></li>
+    <li><a href="tel:09661679452" class="nav-cta">📞 Call Now</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#services" onclick="closeNav()">Services</a>
+  <a href="#why" onclick="closeNav()">Why Us</a>
+  <a href="#process" onclick="closeNav()">Process</a>
+  <a href="#testimonials" onclick="closeNav()">Reviews</a>
+  <a href="#location" onclick="closeNav()">Location</a>
+  <a href="tel:09661679452" style="color:white;background:rgba(181,45,50,0.3);font-weight:700;" onclick="closeNav()">📞 Call Now — 0966 167 9452</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-orb hero-orb-3"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div style="margin-bottom:24px;animation:fadeSlideUp 0.5s ease both;">
+      <img src="https://scontent.fmnl33-6.fna.fbcdn.net/v/t39.30808-6/318332986_662828471982089_3665678967569637679_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=KOa4FvYnk_QQ7kNvwHB6Mpu&_nc_oc=AdojZq7foFcyirLMQSg8EIhMKJHsYC6IswB8uJ9ZNsIce3XeDteDaeR7rtb-d1fhjPs&_nc_zt=23&_nc_ht=scontent.fmnl33-6.fna&_nc_gid=FKIOCTw8skJiMyCrHKjfIQ&_nc_ss=7a2a8&oh=00_Af5aeUgNOTcn1r4lgfjH0M4PSsJWUNcxIM7HbZvKCwh8gg&oe=6A1C557E" alt="JRR Car Tint Logo" style="width:90px;height:90px;object-fit:cover;border-radius:20px;box-shadow:0 8px 32px rgba(181,45,50,0.35);border:3px solid rgba(255,255,255,0.12);" onerror="this.style.display='none'" />
+    </div>
+    <div class="hero-badge">
+      <div class="hero-badge-dot"></div>
+      <span>Now Open · Laoag City, Ilocos Norte</span>
+    </div>
+    <h1 class="hero-title">
+      Premium Car Tint &<br><span class="gradient-text">Auto Accessories</span>
+    </h1>
+    <p class="hero-subtitle">
+      Professional window tint installations, car accessories, alarm systems, power locks, power windows, and head unit installation — all under one roof.
+    </p>
+    <div class="hero-actions">
+      <a href="tel:09661679452" class="btn-primary">
+        📞 Call Now — Book Appointment
+      </a>
+      <a href="#services" class="btn-secondary">
+        Explore Services ↓
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-number">5.0<span>★</span></div>
+        <div class="hero-stat-label">Google Rating</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-number">6<span>+</span></div>
+        <div class="hero-stat-label">Services Offered</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-number">100<span>%</span></div>
+        <div class="hero-stat-label">Customer Satisfaction</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-number">Brgy<span>&nbsp;</span>41</div>
+        <div class="hero-stat-label">Balacad, Laoag</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="trust-item"><span class="trust-icon">🛡️</span> Quality Materials</div>
+    <div class="trust-item"><span class="trust-icon">⚡</span> Fast Turnaround</div>
+    <div class="trust-item"><span class="trust-icon">🔧</span> Expert Installers</div>
+    <div class="trust-item"><span class="trust-icon">⭐</span> 5-Star Rated on Google</div>
+    <div class="trust-item"><span class="trust-icon">📍</span> Laoag City, Ilocos Norte</div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">What We Offer</div>
+      <h2 class="section-title">Complete Auto<br>Installation Services</h2>
+      <p class="section-subtitle">From premium window tinting to full accessory installation — we handle everything your car needs with precision and care.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon">🎨</div>
+        <h3 class="service-title">Window Tinting</h3>
+        <p class="service-desc">High-quality tint films installed with precision. Reduce heat, protect your interior, and enhance your vehicle's look and privacy.</p>
+        <a href="tel:09661679452" class="service-link">Book Now →</a>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">🔔</div>
+        <h3 class="service-title">Car Alarm Systems</h3>
+        <p class="service-desc">Professional installation of car alarm and security systems. Protect your vehicle from theft with reliable, modern alarm setups.</p>
+        <a href="tel:09661679452" class="service-link">Book Now →</a>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">🔒</div>
+        <h3 class="service-title">Power Lock Installation</h3>
+        <p class="service-desc">Upgrade your car with a power lock system for convenience and added security. Clean, professional wiring and installation.</p>
+        <a href="tel:09661679452" class="service-link">Book Now →</a>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">🪟</div>
+        <h3 class="service-title">Power Window Installation</h3>
+        <p class="service-desc">Convert manual windows to smooth power windows. Reliable installation for all car models with quality components.</p>
+        <a href="tel:09661679452" class="service-link">Book Now →</a>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">🎵</div>
+        <h3 class="service-title">Head Unit Installation</h3>
+        <p class="service-desc">Upgrade your car audio and infotainment system. We install head units with clean wiring, camera integration, and more.</p>
+        <a href="tel:09661679452" class="service-link">Book Now →</a>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">✨</div>
+        <h3 class="service-title">Car Accessories</h3>
+        <p class="service-desc">Wide selection of quality car accessories to personalize and enhance your ride. Ask us about our current stock and availability.</p>
+        <a href="tel:09661679452" class="service-link">Inquire Now →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="why" id="why">
+  <div class="container">
+    <div class="why-layout">
+      <div class="reveal">
+        <div class="section-label">Why Choose JRR</div>
+        <h2 class="section-title" style="color:white;">Trusted by<br>Car Owners in Laoag</h2>
+        <p class="section-subtitle" style="color:rgba(255,255,255,0.5);margin-bottom:40px;">We take pride in our workmanship, honest service, and the quality of every installation we complete.</p>
+        <div class="why-points">
+          <div class="why-point">
+            <div class="why-point-icon">🏆</div>
+            <div>
+              <div class="why-point-title">5.0 Google Rating</div>
+              <div class="why-point-desc">Consistently praised for quality work and professional service by real local customers.</div>
+            </div>
+          </div>
+          <div class="why-point">
+            <div class="why-point-icon">🎯</div>
+            <div>
+              <div class="why-point-title">Experienced Installers</div>
+              <div class="why-point-desc">Our team handles each job with the attention and skill needed for a clean, lasting result.</div>
+            </div>
+          </div>
+          <div class="why-point">
+            <div class="why-point-icon">💎</div>
+            <div>
+              <div class="why-point-title">Quality Materials Only</div>
+              <div class="why-point-desc">We use premium tint films and accessories that deliver lasting performance and great value.</div>
+            </div>
+          </div>
+          <div class="why-point">
+            <div class="why-point-icon">📍</div>
+            <div>
+              <div class="why-point-title">Locally Based & Accessible</div>
+              <div class="why-point-desc">Conveniently located at Brgy 41 Balacad, Laoag City — easy to reach for all Ilocano drivers.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="why-visual reveal">
+        <div class="why-card-main">
+          <div class="why-rating">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            <span class="why-rating-text">&nbsp;5.0 / 5.0 on Google</span>
+          </div>
+          <p class="why-review-text">"Good quality tint and accessories. Highly satisfied with the work done!"</p>
+          <div class="why-reviewer">
+            <div class="why-reviewer-avatar">J</div>
+            <div>
+              <div class="why-reviewer-name">James Relado</div>
+              <div class="why-reviewer-meta">Verified Google Review · 2 years ago</div>
+            </div>
+          </div>
+        </div>
+        <div class="why-floating">
+          <div class="why-floating-number">5.0★</div>
+          <div class="why-floating-label">Google Rating</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="container">
+    <div class="section-header reveal" style="text-align:center;">
+      <div class="section-label" style="justify-content:center;">How It Works</div>
+      <h2 class="section-title">Simple. Fast. Professional.</h2>
+      <p class="section-subtitle" style="margin:0 auto;">Getting your car serviced at JRR is quick and hassle-free. Here's what to expect.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step reveal">
+        <div class="step-number">1</div>
+        <h3 class="step-title">Call or Message Us</h3>
+        <p class="step-desc">Contact us at 0966 167 9452 to ask about services, pricing, and schedule your appointment.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-number">2</div>
+        <h3 class="step-title">Bring Your Vehicle</h3>
+        <p class="step-desc">Drive to our shop at Brgy 41 Balacad, Sitio 6, Laoag City. We're open daily and close at 6 PM.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-number">3</div>
+        <h3 class="step-title">We Get to Work</h3>
+        <p class="step-desc">Our team performs your requested service with precision — from tinting to head unit or alarm installation.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-number">4</div>
+        <h3 class="step-title">Drive Away Happy</h3>
+        <p class="step-desc">Inspect the finished work and drive off with a professionally upgraded vehicle you'll love.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Our Work</div>
+      <h2 class="section-title">Service Gallery</h2>
+      <p class="section-subtitle">Every job we complete reflects our commitment to precision and quality.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item reveal">
+        <div class="gallery-img-wrap">
+          <img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/fcc3f3a2a9283c8bd6e23d3b58b27a1912d5ccd8.jpg" alt="Window Tint Installation" />
+          <div class="gallery-label">🎨 Window Tinting</div>
+        </div>
+      </div>
+      <div class="gallery-item reveal">
+        <div class="gallery-img-wrap">
+          <img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/26fa40a447f936ce66bd5d74f910c1bdd460c27b.jpg" alt="Tint Film Application" />
+          <div class="gallery-label">✨ Tint Film Application</div>
+        </div>
+      </div>
+      <div class="gallery-item reveal">
+        <div class="gallery-img-wrap">
+          <img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/53dae2fbce3999357d6f710e3fed06afd37c806a.jpg" alt="Car Alarm Installation" />
+          <div class="gallery-label">🔔 Car Alarm System</div>
+        </div>
+      </div>
+      <div class="gallery-item reveal">
+        <div class="gallery-img-wrap">
+          <img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/603bb93edbac12797560e63b8974884d549a067e.jpg" alt="Head Unit Installation" />
+          <div class="gallery-label">🎵 Head Unit Install</div>
+        </div>
+      </div>
+      <div class="gallery-item reveal">
+        <div class="gallery-img-wrap">
+          <img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/e23d9128e9539c555a94937bdb4b2ad40325b2d4.jpg" alt="Power Window Installation" />
+          <div class="gallery-label">🪟 Power Window</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="section-header reveal" style="text-align:center;">
+      <div class="section-label" style="justify-content:center;">Customer Reviews</div>
+      <h2 class="section-title">What Our Customers Say</h2>
+      <p class="section-subtitle" style="margin:0 auto;">Real experiences from real Laoag car owners — our reputation speaks for itself.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <p class="testimonial-text">"Good quality tint and accessories. Sobrang satisfied sa gawa nila. Highly recommended sa lahat ng nag-aapply ng tint sa Laoag!"</p>
+        <div class="testimonial-author">
+          <div class="t-avatar">J</div>
+          <div>
+            <div class="t-name">James Relado</div>
+            <div class="t-meta">Car Owner · Laoag City</div>
+            <div class="t-google">✔ Verified Google Review</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <p class="testimonial-text">"Professional ang service at maayos ang trabaho. Satisfied ako sa result. Babalik talaga ako para sa ibang services nila!"</p>
+        <div class="testimonial-author">
+          <div class="t-avatar">K</div>
+          <div>
+            <div class="t-name">Karen Joyce Daleja</div>
+            <div class="t-meta">Car Owner · Laoag City</div>
+            <div class="t-google">✔ Verified Google Review</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal" style="border:2px solid rgba(181,45,50,0.15); background:linear-gradient(135deg,rgba(181,45,50,0.03),white);">
+        <div style="text-align:center;padding:20px 0;">
+          <div style="font-size:48px;margin-bottom:16px;">⭐</div>
+          <div style="font-size:40px;font-weight:800;color:var(--navy);">5.0</div>
+          <div style="font-size:14px;color:var(--text-muted);margin:8px 0 16px;">Overall Google Rating</div>
+          <div style="display:flex;justify-content:center;gap:6px;margin-bottom:12px;">
+            <span style="color:#FFD700;font-size:24px;">★★★★★</span>
+          </div>
+          <div style="font-size:13px;color:var(--text-muted);">Based on Google Reviews</div>
+          <a href="tel:09661679452" class="btn-primary" style="margin-top:24px;width:100%;justify-content:center;">Leave Your Review</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION / MAP -->
+<section class="map-section" id="location">
+  <div class="container">
+    <div class="map-layout">
+      <div class="reveal">
+        <div class="section-label">Find Us</div>
+        <h2 class="section-title">Visit Our Shop</h2>
+        <p class="section-subtitle" style="margin-bottom:36px;">Come visit us at our Laoag City location. We're open and ready to serve you and your car.</p>
+        <div class="map-details">
+          <div class="map-detail-item">
+            <div class="map-detail-icon">📍</div>
+            <div>
+              <div class="map-detail-label">Address</div>
+              <div class="map-detail-value">Brgy 41 Balacad, Sitio 6<br>Laoag City, 2900 Ilocos Norte</div>
+            </div>
+          </div>
+          <div class="map-detail-item">
+            <div class="map-detail-icon">📞</div>
+            <div>
+              <div class="map-detail-label">Phone / Mobile</div>
+              <div class="map-detail-value"><a href="tel:09661679452" style="color:var(--red);text-decoration:none;font-weight:700;">0966 167 9452</a></div>
+            </div>
+          </div>
+          <div class="map-detail-item">
+            <div class="map-detail-icon">🕐</div>
+            <div>
+              <div class="map-detail-label">Business Hours</div>
+              <div class="map-detail-value">Open Daily · Closes at 6:00 PM<br><span style="font-size:12px;color:var(--text-muted);">Holiday hours may vary</span></div>
+            </div>
+          </div>
+          <div class="map-detail-item">
+            <div class="map-detail-icon">🛠️</div>
+            <div>
+              <div class="map-detail-label">Services Available</div>
+              <div class="map-detail-value">Tint · Alarm · Power Lock<br>Power Window · Head Unit · Accessories</div>
+            </div>
+          </div>
+        </div>
+        <a href="https://maps.google.com/?q=Brgy+41+Balacad+Laoag+City+Ilocos+Norte" target="_blank" class="btn-primary" style="margin-top:32px;display:inline-flex;">
+          🗺️ Open in Google Maps
+        </a>
+      </div>
+      <div class="reveal">
+        <div class="map-embed">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3816.5!2d120.5936!3d18.1974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3388c16f1e7918fb%3A0x26d62cf38ba63f6c!2sJRR%20CAR%20TINT%20INSTALLATIONS%20SERVICES!5e0!3m2!1sen!2sph!4v1234567890"
+            width="100%" height="100%"
+            style="border:0;filter:grayscale(20%) contrast(1.1);"
+            allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta-section">
+  <div class="cta-orb cta-orb-1"></div>
+  <div class="cta-orb cta-orb-2"></div>
+  <div class="container reveal">
+    <div class="section-label" style="justify-content:center;color:#e05560;">
+      Ready to Upgrade Your Ride?
+    </div>
+    <h2 class="section-title" style="color:white;text-align:center;">Book Your Appointment<br>Today</h2>
+    <p class="cta-subtitle">Call us now or drop by our shop in Laoag City. We're ready to give your car the treatment it deserves.</p>
+    <div class="cta-actions">
+      <a href="tel:09661679452" class="btn-primary" style="font-size:17px;padding:18px 36px;">
+        📞 Call 0966 167 9452
+      </a>
+      <a href="https://maps.google.com/?q=Brgy+41+Balacad+Laoag+City+Ilocos+Norte" target="_blank" class="btn-secondary">
+        📍 Get Directions
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT BAR -->
+<div class="contact-bar">
+  <div class="contact-bar-inner">
+    <div class="contact-info">
+      <div class="contact-item">
+        <span class="contact-item-icon">📞</span>
+        <div>
+          <div class="contact-item-text">0966 167 9452</div>
+          <div class="contact-item-sub">Call or Text Anytime</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <span class="contact-item-icon">📍</span>
+        <div>
+          <div class="contact-item-text">Brgy 41 Balacad, Sitio 6, Laoag City</div>
+          <div class="contact-item-sub">2900 Ilocos Norte, Philippines</div>
+        </div>
+      </div>
+    </div>
+    <div class="hours-badge">
+      <div class="open-dot"></div>
+      Open · Closes 6 PM
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-logo">
+          <div class="nav-logo-icon" style="background:transparent;padding:0;overflow:hidden;"><img src="https://scontent.fmnl33-6.fna.fbcdn.net/v/t39.30808-6/318332986_662828471982089_3665678967569637679_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=KOa4FvYnk_QQ7kNvwHB6Mpu&_nc_oc=AdojZq7foFcyirLMQSg8EIhMKJHsYC6IswB8uJ9ZNsIce3XeDteDaeR7rtb-d1fhjPs&_nc_zt=23&_nc_ht=scontent.fmnl33-6.fna&_nc_gid=FKIOCTw8skJiMyCrHKjfIQ&_nc_ss=7a2a8&oh=00_Af5aeUgNOTcn1r4lgfjH0M4PSsJWUNcxIM7HbZvKCwh8gg&oe=6A1C557E" alt="JRR Logo" style="width:40px;height:40px;object-fit:cover;border-radius:10px;" onerror="this.parentElement.innerHTML='JRR'" /></div>
+          <div class="nav-logo-text">
+            <span class="nav-logo-brand">JRR Car Tint</span>
+            <span class="nav-logo-sub">Installations Services</span>
+          </div>
+        </div>
+        <p class="footer-brand-desc">Your trusted car tint and auto accessories specialist in Laoag City, Ilocos Norte. Premium quality, expert installation, honest pricing.</p>
+      </div>
+      <div>
+        <h4 class="footer-heading">Services</h4>
+        <ul class="footer-links">
+          <li><a href="#services">Window Tinting</a></li>
+          <li><a href="#services">Car Alarm</a></li>
+          <li><a href="#services">Power Lock</a></li>
+          <li><a href="#services">Power Window</a></li>
+          <li><a href="#services">Head Unit</a></li>
+          <li><a href="#services">Car Accessories</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Contact</h4>
+        <ul class="footer-links">
+          <li><a href="tel:09661679452">📞 0966 167 9452</a></li>
+          <li><a href="#location">📍 Brgy 41 Balacad, Sitio 6</a></li>
+          <li><a href="#location">Laoag City, 2900</a></li>
+          <li><a href="#location">Ilocos Norte, Philippines</a></li>
+          <li><a href="#location">🕐 Open Daily · Until 6 PM</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 <span>JRR Car Tint Installations Services</span>. All rights reserved. · Laoag City, Ilocos Norte</p>
+      <div class="footer-socials">
+        <a href="tel:09661679452" class="footer-social-btn" title="Call Us">📞</a>
+        <a href="https://maps.google.com/?q=JRR+Car+Tint+Laoag" target="_blank" class="footer-social-btn" title="Find on Maps">📍</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<a href="#home" class="back-top" id="backTop">↑</a>
+
+<script>
+  // Mobile nav toggle
+  function toggleNav() {
+    document.getElementById('mobileNav').classList.toggle('open');
+  }
+  function closeNav() {
+    document.getElementById('mobileNav').classList.remove('open');
+  }
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 60);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  // Back to top
+  const backTop = document.getElementById('backTop');
+  window.addEventListener('scroll', () => {
+    backTop.classList.toggle('visible', window.scrollY > 400);
+  });
+
+  // Navbar scroll effect
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) {
+      navbar.style.background = 'rgba(7,20,43,0.97)';
+      navbar.style.height = '64px';
+    } else {
+      navbar.style.background = 'rgba(7,20,43,0.85)';
+      navbar.style.height = '72px';
+    }
+  });
+</script>
+</body>
+</html>
